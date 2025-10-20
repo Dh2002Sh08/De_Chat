@@ -179,7 +179,7 @@ export default function ChatBox() {
             }
             let messageData;
             try {
-              const response = await fetch(`https://ipfs.io/ipfs/${ipfsUrl}`);
+              const response = await fetch(`https://coffee-peculiar-thrush-870.mypinata.cloud/ipfs/${ipfsUrl}`);
               if (!response.ok) throw new Error(`IPFS fetch failed: ${response.statusText}`);
               messageData = await response.json();
               console.log('Sent message data:', messageData); // Debug log
@@ -194,7 +194,7 @@ export default function ChatBox() {
                   text: plainText,
                   isSender: true,
                   timestamp,
-                  image: messageData.image ? `https://ipfs.io/ipfs/${messageData.image}` : undefined,
+                  image: messageData.image ? `https://coffee-peculiar-thrush-870.mypinata.cloud/ipfs/${messageData.image}` : undefined,
                 };
               } catch (e) {
                 console.error('Decryption failed for sent message:', e, messageData);
@@ -206,7 +206,7 @@ export default function ChatBox() {
                 text: messageData.message,
                 isSender: true,
                 timestamp,
-                image: messageData.image ? `https://ipfs.io/ipfs/${messageData.image}` : undefined,
+                image: messageData.image ? `https://coffee-peculiar-thrush-870.mypinata.cloud/ipfs/${messageData.image}` : undefined,
               };
             } else {
               console.error('Invalid message format for sent message:', messageData);
@@ -228,7 +228,7 @@ export default function ChatBox() {
             }
             let messageData;
             try {
-              const response = await fetch(`https://ipfs.io/ipfs/${ipfsUrl}`);
+                const response = await fetch(`https://coffee-peculiar-thrush-870.mypinata.cloud/ipfs/${ipfsUrl}`);
               if (!response.ok) throw new Error(`IPFS fetch failed: ${response.statusText}`);
               messageData = await response.json();
               console.log('Received message data:', messageData); // Debug log
@@ -250,7 +250,7 @@ export default function ChatBox() {
                 text: messageData.message,
                 isSender: false,
                 timestamp,
-                image: messageData.image ? `https://ipfs.io/ipfs/${messageData.image}` : undefined,
+                image: messageData.image ? `https://coffee-peculiar-thrush-870.mypinata.cloud/ipfs/${messageData.image}` : undefined,
               };
             } else {
               console.error('Invalid message format for received message:', messageData);
